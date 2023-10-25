@@ -1,0 +1,12 @@
+.container {
+  /* 最大幅を固定 */
+  max-width: 1000px;
+  /*
+  幅を指定したボックスの左右の margin を両方とも auto にすると、
+  親要素と自分自身の幅の差分となる余白を2等分してボックスの左右それぞれに均等に配置し、
+  その結果ボックスが中央に配置されるという仕組み。
+  */
+  margin-left: auto;
+  margin-right: auto;
+  background: #eee;
+}
