@@ -28,6 +28,17 @@ img {
 
 .row {
   display: flex;
+
+  /* フレックスコンテナの主軸の幅に対して余白をもって等間隔に配置されます。
+  余白がないときは、flex-startと同じになります。 */
+  justify-content: space-between;
+
+  /* padding 左右 20ox ずつを含んだサイズ */
+  max-width: 640px;
+  /* ブロックレベル要素を中央揃えにする */
+  margin: 0 auto;
+  padding: 20px;
+  outline: 1px dashed #999;
 }
 
 .col2 {
@@ -39,8 +50,18 @@ img {
 
   /* 
   実務において、デザインカンプをもとに静的にデザインされたものをもとに、同一比率で可変レイアウトに変換する.
-  (子要素のサイズ) ÷ （親要素の content-box サイズ） × 100% = 46.875%
+  (子要素のサイズ) ÷ （親要素の content-box サイズ） × 100%
+  calc((300 / 640) * 100%) = 46.875%
   */
-  width: calc((300 / 640) * 100%);
+  /* width: calc((290 / 600) * 100%); */
+
+  /*
+  親要素に padding がある場合、子要素の%計算の基準となる領域は
+  paddng を除いた純粋なコンテンツ領域（=content-box）のサイズを使用する。
+  calc((290 / 600) * 100%) = 48.333%
+  */
+  width: calc((290 / 600) * 100%);
+
   border: 1px dashed #999;
+  background: #e7e7e7;
 }
