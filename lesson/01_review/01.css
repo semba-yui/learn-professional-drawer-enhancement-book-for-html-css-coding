@@ -1,0 +1,64 @@
+.container {
+  /* 各色の2桁が同じ場合は省略可能 */
+  /* background-color: #EEEEEE; */
+  background-color: #EEE;
+
+  max-width: 1000px;
+
+  /*
+  幅を指定したボックスの左右の margin を両方とも auto にすると、
+  親要素と自分自身の幅の差分となる余白を2等分してボックスの左右それぞれに均等に配置し、
+  その結果ボックスが中央に配置されるという仕組み。
+  */
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* 省略記法 */
+  margin: 0 auto;
+  /*.boxの中央寄せ*/
+}
+
+.row {
+
+  display: flex;
+
+  /* フレックスコンテナの主軸の幅に対して余白をもって等間隔に配置されます。
+  余白がないときは、flex-startと同じになります。 */
+  justify-content: space-between;
+
+
+  /* padding 左右 20ox ずつを含んだサイズ */
+  max-width: 640px;
+
+  /* ブロックレベル要素を中央揃えにする */
+  margin: 0 auto;
+  padding: 20px;
+  outline: 1px dashed #999;
+}
+
+.pic01 {
+  width: 640;
+  height: 480;
+}
+
+/* 画像のフルード（液体のように容器の大きさに合わせて変化する）化 */
+img {
+
+  /* 画像自体の物理的な幅を最大値としてそれ以上は広がらず、
+  自分より親要素の幅が狭くなった場合には親要素幅に合わせて縮小できる
+   */
+  max-width: 100%;
+
+  /* width: 100%; とした場合、画像自体の物理的な幅を超えて親要素の幅いっぱいまで広がる */
+  /* width: 100%; */
+
+  /* 画像のアスペクト比を維持するための設定 */
+  height: auto;
+}
+
+.col2 {
+
+  width: calc((290 / 600) * 100%);
+
+  border: 1px dashed #999;
+  background: #e7e7e7;
+}
